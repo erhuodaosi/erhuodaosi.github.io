@@ -10,17 +10,28 @@ const images = [
   './images/9.png'
 ];
 
-// 获取容器
-const container = document.getElementById('memoryWrapper')
+const memoryWrapper = document.getElementById('memoryWrapper');
+let currentIndex = 0;
 
-// 循环生成图片
-images.forEach(src => {
-  const img = document.createElement('img')
-  img.src = src
-  img.alt = 'Image'
-  container.appendChild(img)
-});
+function preloadImage(index) {
+  const img = new Image();
+  img.src = images[index];
+  img.onload = () => {
+    memoryWrapper.appendChild(img);
+    setTimeout(() => {
+    }, 3000); // 控制每张图片显示的时间
+  };
+}
 
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % images.length;
+  preloadImage(currentIndex);
+}
+
+setInterval(nextSlide, 4000); // 控制图片切换的时间
+
+// 初始化加载第一张图片
+preloadImage(currentIndex);
 function createHeart() {
   const heart = document.createElement('div')
   heart.className = 'heart'
