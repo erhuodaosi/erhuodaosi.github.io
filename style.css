@@ -5,20 +5,15 @@ body {
 
 .memory-wrapper {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .memory-wrapper img {
-    width: calc(50% - 15px); /* 使图片宽度不超过容器宽度的50%减去间距 */
-    box-sizing: border-box;
-    height: auto; /* 保持图片比例 */
-    object-fit: contain;
-    margin: 10px 10px 0 10px; /* 图片周围的间距 */
-    border: 2px solid #ff69b4;
-}
-
-.memory-wrapper img:nth-child(2n) {
-    margin-left: 0; /* 每行第一个图片的左边距为0 */
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .heart {
