@@ -10,25 +10,31 @@ const images = [
   './images/9.png'
 ];
 
-const memoryWrapper = document.getElementById('memoryWrapper');
+const slideshowImage = document.getElementById('slideshowImage');
 let currentIndex = 0;
 
 function preloadImage(index) {
   const img = new Image();
   img.src = images[index];
-  img.onload = () => {
-    memoryWrapper.appendChild(img);
-    setTimeout(() => {
-    }, 3000); // 控制每张图片显示的时间
-  };
+}
+
+function showImage(index) {
+  setTimeout(() => {
+    slideshowImage.src = images[index];
+  }, 1000); // 等待当前图片淡出
 }
 
 function nextSlide() {
   currentIndex = (currentIndex + 1) % images.length;
-  preloadImage(currentIndex);
+  showImage(currentIndex);
 }
 
-setInterval(nextSlide, 4000); // 控制图片切换的时间
+// 预加载所有图片
+images.forEach((_, index) => preloadImage(index));
+
+// 初始化加载第一张图片
+showImage(currentIndex);
+setInterval(nextSlide, 3000); // 控制图片切换的时间
 
 // 初始化加载第一张图片
 preloadImage(currentIndex);
