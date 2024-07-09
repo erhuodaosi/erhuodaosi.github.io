@@ -1,6 +1,7 @@
 body {
     background-color: #ffc0cb;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .memory-wrapper {
