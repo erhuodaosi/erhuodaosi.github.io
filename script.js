@@ -34,7 +34,7 @@ images.forEach((_, index) => preloadImage(index));
 
 // 初始化加载第一张图片
 showImage(currentIndex);
-setInterval(nextSlide, 3000); // 控制图片切换的时间
+setInterval(nextSlide, 2000); // 控制图片切换的时间
 
 // 初始化加载第一张图片
 preloadImage(currentIndex);
