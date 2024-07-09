@@ -8,10 +8,15 @@ body {
     display: flex;
 }
 
+.memory-wrapper {
+    text-align: center;
+}
+
 .memory-wrapper img {
-    width: 100%;
+    width: 80vw;
     height: auto;
     transition: opacity 1s ease-in-out;
+    border: 2px solid #ff69b4;
 }
 
 .heart {
