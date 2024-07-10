@@ -59,3 +59,41 @@ body {
         opacity: 0;
     }
 }
+
+.tab-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 70px; /* 为了给底部导航栏腾出空间 */
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to right, #ff69b4, #ff1493);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.bottom-nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.bottom-nav button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
