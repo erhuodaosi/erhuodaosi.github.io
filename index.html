@@ -11,10 +11,37 @@
 <body>
 
 <div class="love-wrapper">
-   <div class="memory-wrapper" id="memoryWrapper">
-     <img id="slideshowImage" />
-   </div>
+    <div class="tab-content" id="tab1">
+        <div class="love-wrapper">
+            <div class="memory-wrapper" id="memoryWrapper">
+                <img id="slideshowImage" />
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="tab2" style="display:none;">
+        <h2>Tab 2 Content</h2>
+        <p>Content for tab 2 goes here.</p>
+    </div>
+
+    <div class="tab-content" id="tab3" style="display:none;">
+        <h2>Tab 3 Content</h2>
+        <p>Content for tab 3 goes here.</p>
+    </div>
+
+    <div class="tab-content" id="tab4" style="display:none;">
+        <h2>Tab 4 Content</h2>
+        <p>Content for tab 4 goes here.</p>
+    </div>
+
+    <div class="bottom-nav">
+        <button onclick="showTab('tab1')">aa</button>
+        <button onclick="showTab('tab2')">bb</button>
+        <button onclick="showTab('tab3')">cc</button>
+        <button onclick="showTab('tab4')">dd</button>
+    </div>
 </div>
+    
 <script src="script.js"></script>
 </body>
 </html>
