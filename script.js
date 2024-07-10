@@ -57,3 +57,5 @@ function showTab(tabId) {
     tab.style.display = tab.id === tabId ? 'block ' : 'none';
   });
 }
+
+showTab(tab1)
