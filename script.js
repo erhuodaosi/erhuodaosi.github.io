@@ -54,6 +54,6 @@ setInterval(createHeart, 500);
 function showTab(tabId) {
   const tabs = document.querySelectorAll('.tab-content');
   tabs.forEach(tab => {
-    tab.style.visibility = tab.id === tabId ? 'visible ' : 'hidden';
+    tab.style.display = tab.id === tabId ? 'block ' : 'none';
   });
 }
