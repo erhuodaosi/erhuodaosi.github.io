@@ -8,36 +8,31 @@ const images = [
   './images/7.png',
   './images/8.png',
   './images/9.png'
-];
+]
 
-const slideshowImage = document.getElementById('slideshowImage');
-let currentIndex = 0;
-
-function preloadImage(index) {
-  const img = new Image();
-  img.src = images[index];
-}
+const slideshowImage = document.getElementById('slideshowImage')
+let currentIndex = 0
 
 function showImage(index) {
   setTimeout(() => {
-    slideshowImage.src = images[index];
-  }, 1000); // 等待当前图片淡出
+    slideshowImage.src = images[index]
+  }, 1000) // 等待当前图片淡出
 }
 
 function nextSlide() {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
+  currentIndex = (currentIndex + 1) % images.length
+  showImage(currentIndex)
 }
 
-// 预加载所有图片
-images.forEach((_, index) => preloadImage(index));
-
 // 初始化加载第一张图片
-showImage(currentIndex);
-setInterval(nextSlide, 2000); // 控制图片切换的时间
+showImage(currentIndex)
 
-// 初始化加载第一张图片
-preloadImage(currentIndex);
+slideshowImage.onload = () => {
+  setTimeout(() => {
+    nextSlide()
+  }, 2000)
+}
+
 function createHeart() {
   const heart = document.createElement('div')
   heart.className = 'heart'
@@ -49,11 +44,11 @@ function createHeart() {
   }, 5000)
 }
 
-setInterval(createHeart, 500);
+setInterval(createHeart, 500)
 
 function showTab(tabId) {
-  const tabs = document.querySelectorAll('.tab-content');
+  const tabs = document.querySelectorAll('.tab-content')
   tabs.forEach(tab => {
-    tab.style.display = tab.id === tabId ? 'block ' : 'none';
-  });
+    tab.style.display = tab.id === tabId ? 'block ' : 'none'
+  })
 }
