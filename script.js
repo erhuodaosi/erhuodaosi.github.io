@@ -63,3 +63,33 @@ function showTab(tabId) {
 }
 
 showTab('tab1')
+
+const articleIds = ['article1', 'article2', 'article3']
+let currentArticleIndex = 0
+
+function showArticle(index) {
+  const articles = document.querySelectorAll('.article')
+
+  articles.forEach((article, i) => {
+    article.style.display = i === index ? 'block' : 'none'
+  })
+
+  currentArticleIndex = index
+}
+
+function showPreviousArticle() {
+  if (currentArticleIndex > 0) {
+    showArticle(currentArticleIndex - 1)
+  }
+}
+
+function showNextArticle() {
+  if (currentArticleIndex < articleIds.length - 1) {
+    showArticle(currentArticleIndex + 1)
+  }
+}
+
+// 页面加载时默认显示第一篇文章
+document.addEventListener('DOMContentLoaded', () => {
+  showArticle(0)
+})
