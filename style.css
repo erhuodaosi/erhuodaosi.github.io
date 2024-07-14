@@ -92,7 +92,7 @@ body {
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.bottom-nav button:hover {
+.bottom-nav button.active {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
