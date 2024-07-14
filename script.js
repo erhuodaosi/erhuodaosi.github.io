@@ -48,7 +48,18 @@ setInterval(createHeart, 500)
 
 function showTab(tabId) {
   const tabs = document.querySelectorAll('.tab-content')
+  const buttons = document.querySelectorAll('.bottom-nav button')
+
   tabs.forEach(tab => {
     tab.style.display = tab.id === tabId ? 'block ' : 'none'
   })
+
+  buttons.forEach(button => {
+    button.classList.remove('active')
+    if (button.getAttribute('onclick').includes(tabId)) {
+      button.classList.add('active')
+    }
+  })
 }
+
+showTab('tab1')
