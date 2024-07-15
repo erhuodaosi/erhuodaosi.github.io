@@ -1,8 +1,9 @@
 body {
-    background-color: #ffc0cb;
+    background-color: #ffe4e1;
     margin: 0;
     overflow-x: hidden;
-    color: white; 
+    color: #333; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     font-weight: bold; 
     text-align: center;
 }
@@ -98,16 +99,6 @@ body {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-body {
-    background-color: #ffe4e1;
-    margin: 0;
-    overflow-x: hidden;
-    color: #333; 
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-weight: bold; 
-    text-align: center;
 }
 
 .memory-wrapper img {
