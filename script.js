@@ -64,7 +64,7 @@ function showTab(tabId) {
 
 showTab('tab1')
 
-const articleIds = ['article1', 'article2', 'article3']
+const articleIds = ['article1', 'article2', 'article3', 'article4']
 let currentArticleIndex = 0
 
 function showArticle(index) {
