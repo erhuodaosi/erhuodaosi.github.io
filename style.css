@@ -91,8 +91,6 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    padding-bottom: env(safe-area-inset-bottom);
-    /* 兼容 iOS */
 }
 
 .bottom-nav button {
