@@ -1,13 +1,19 @@
+/* 基本样式 */
 body {
     background-color: #ffe4e1;
     margin: 0;
     overflow-x: hidden;
-    color: #333; 
+    color: #333;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-weight: bold; 
+    font-weight: bold;
     text-align: center;
 }
 
+.mt10 {
+    margin-top: 10px;
+}
+
+/* 记忆包装样式 */
 .memory-wrapper img {
     width: 80vw;
     height: auto;
@@ -16,6 +22,7 @@ body {
     background-color: #f0f0f0;
 }
 
+/* 心形浮动动画 */
 .heart {
     position: absolute;
     width: 30px;
@@ -51,23 +58,28 @@ body {
         transform: translateY(0) scale(1) rotate(-45deg);
         opacity: 1;
     }
+
     50% {
         transform: translateY(-50vh) scale(1.2) rotate(-45deg);
         opacity: 0.8;
     }
+
     100% {
         transform: translateY(-100vh) scale(1.5) rotate(-45deg);
         opacity: 0;
     }
 }
 
+/* 选项卡内容样式 */
 .tab-content {
     flex: 1;
     overflow-y: auto;
-    padding: 20px;
-    padding-bottom: 70px; /* 为了给底部导航栏腾出空间 */
+    padding: 0 20px 20px 20px;
+    padding-bottom: 70px;
+    /* 为底部导航栏腾出空间 */
 }
 
+/* 底部导航栏样式 */
 .bottom-nav {
     display: flex;
     justify-content: space-around;
@@ -79,8 +91,8 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    padding-bottom: constant(safe-area-inset-bottom);   /* 兼容 iOS < 11.2 */
-    padding-bottom: env(safe-area-inset-bottom);  /* 兼容 iOS >= 11.2 */
+    padding-bottom: env(safe-area-inset-bottom);
+    /* 兼容 iOS */
 }
 
 .bottom-nav button {
@@ -95,109 +107,14 @@ body {
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
+.bottom-nav button:hover,
 .bottom-nav button.active {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.memory-wrapper img {
-    width: 80vw;
-    height: auto;
-    transition: opacity 1s ease-in-out;
-    border: 2px solid #ff69b4;
-    background-color: #f0f0f0;
-}
-
-.heart {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    transform: rotate(-45deg);
-    animation: float 4s infinite;
-    bottom: 0;
-}
-
-.heart:before,
-.heart:after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    border-radius: 50%;
-}
-
-.heart:before {
-    top: -15px;
-    left: 0;
-}
-
-.heart:after {
-    left: 15px;
-    top: 0;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(1) rotate(-45deg);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-50vh) scale(1.2) rotate(-45deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(-100vh) scale(1.5) rotate(-45deg);
-        opacity: 0;
-    }
-}
-
-.tab-content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    padding-bottom: 70px; /* 为了给底部导航栏腾出空间 */
-}
-
-.bottom-nav {
-    display: flex;
-    justify-content: space-around;
-    background: linear-gradient(to right, #ff69b4, #ff1493);
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.bottom-nav button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.bottom-nav button:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.bottom-nav button.active {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* 文章包装样式 */
 .article-wrapper {
     margin-top: 20px;
     display: flex;
@@ -245,35 +162,8 @@ body {
     background-color: #ff69b4;
 }
 
-.article::-webkit-scrollbar-thumb:hover {
+.article p::-webkit-scrollbar-thumb:hover {
     background-color: #ff1493;
-}
-
-.article-wrapper {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.article {
-    display: none;
-    background-color: #fff0f5;
-    border: 2px solid #ff69b4;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    width: 90%;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.article h3 {
-    color: #ff69b4;
-    font-size: 24px;
-    margin-bottom: 10px;
 }
 
 /* 文章导航按钮样式 */
@@ -285,7 +175,8 @@ body {
     background-color: #fff0f5;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1; /* 确保在文章内容之上 */
+    z-index: 1;
+    /* 确保在文章内容之上 */
 }
 
 .article-nav button {
