@@ -80,12 +80,16 @@ function showArticle(index) {
 function showPreviousArticle() {
   if (currentArticleIndex > 0) {
     showArticle(currentArticleIndex - 1)
+  } else {
+    alert("没有上一篇了");
   }
 }
 
 function showNextArticle() {
   if (currentArticleIndex < articleIds.length - 1) {
     showArticle(currentArticleIndex + 1)
+  } else {
+    alert("没有下一篇了");
   }
 }
 
