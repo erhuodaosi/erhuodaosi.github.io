@@ -17,7 +17,7 @@ let currentArticleIndex = 0
 let isPlaying = true
 const musicPlayer = document.getElementById('musicPlayer')
 const musicIcon = document.querySelector('.music-icon')
-const startDate = new Date('2024-02-16T20:13:00')
+const startDate = new Date('2024-02-15T20:13:00')
 
 // 获取当前时间
 function getCurrentTime() {
