@@ -198,3 +198,9 @@ h2 {
 .article-nav button:hover {
     background: linear-gradient(to right, #ff1493, #ff69b4);
 }
+
+.article-nav button:disabled {
+    background-color: #d3d3d3; 
+    color: #ccc; 
+    cursor: not-allowed;
+}
