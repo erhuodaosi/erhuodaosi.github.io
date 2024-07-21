@@ -11,6 +11,13 @@
 <body>
 
     <div class="love-wrapper">
+        <div class="music-icon" onclick="toggleMusicPlayer()">❤️</div>
+        <div class="music-player" id="musicPlayer">
+            <audio controls autoplay loop>
+                <source src="audio/love.kgm" type="audio/mpeg">
+                您的浏览器不支持音频元素。
+            </audio>
+        </div>
         <div class="tab-content" id="tab1">
             <h2>情不知所起，一往而深</h2>
             <div class="article-nav">
