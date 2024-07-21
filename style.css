@@ -235,7 +235,7 @@ h2 {
     }
 }
 
-.music-player {
+.music-player-wrapper {
     position: absolute;
     left: -9999px;
 }
