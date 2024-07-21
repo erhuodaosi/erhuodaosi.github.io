@@ -113,7 +113,6 @@ function toggleMusic() {
 
 // 页面加载时的默认设置
 document.addEventListener('DOMContentLoaded', () => {
-  musicIcon.classList.add('rotate')
   showTab('tab1')
   showArticle(0)
   initSlideshow()
