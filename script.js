@@ -14,6 +14,9 @@ const images = [
 const slideshowImage = document.getElementById('slideshowImage')
 let currentIndex = 0
 let currentArticleIndex = 0
+let isPlaying = true
+const audioPlayer = document.getElementById('audioPlayer')
+const musicIcon = document.querySelector('.music-icon')
 
 // 获取单个 DOM 元素的助手函数
 function getElement(selector) {
@@ -97,8 +100,20 @@ function checkButtonStatus() {
   nextButton.disabled = currentArticleIndex >= getElements('.article').length - 1
 }
 
+function toggleMusic() {
+  if (isPlaying) {
+      audioPlayer.pause()
+      musicIcon.classList.remove('rotate') // 停止旋转
+  } else {
+      audioPlayer.play()
+      musicIcon.classList.add('rotate')  // 开始旋转
+  }
+  isPlaying = !isPlaying
+}
+
 // 页面加载时的默认设置
 document.addEventListener('DOMContentLoaded', () => {
+  musicIcon.classList.add('rotate')
   showTab('tab1')
   showArticle(0)
   initSlideshow()
