@@ -77,14 +77,14 @@ function showArticle(index) {
 
 // 显示上一篇文章
 function showPreviousArticle() {
-  if (currentArticleIndex == 1) alert('相见恨晚，爱意常在')
+  if (currentArticleIndex == 1) alert('相见恨晚，爱意永恒')
   if (currentArticleIndex >= 0) showArticle(currentArticleIndex - 1)
 }
 
 // 显示下一篇文章
 function showNextArticle() {
   const total = getElements('.article').length
-  if (currentArticleIndex == total - 2) alert('情话道不完，余生多指教')
+  if (currentArticleIndex == total - 2) alert('情话道不尽，余生只与你诉说。')
   if (currentArticleIndex <= total - 1) showArticle(currentArticleIndex + 1)
 }
 
