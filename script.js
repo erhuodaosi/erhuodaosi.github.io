@@ -63,7 +63,7 @@ function showTab(tabId) {
 
   getElements('.bottom-nav button').forEach(button => {
     button.classList.toggle('active', button.getAttribute('onclick').includes(tabId))
-  });
+  })
 }
 
 // 显示文章
@@ -77,14 +77,15 @@ function showArticle(index) {
 
 // 显示上一篇文章
 function showPreviousArticle() {
-  if (currentArticleIndex <= 0) return
-  showArticle(currentArticleIndex - 1)
+  if (currentArticleIndex == 1) alert('相见恨晚，爱意常在')
+  if (currentArticleIndex >= 0) showArticle(currentArticleIndex - 1)
 }
 
 // 显示下一篇文章
 function showNextArticle() {
-  if (currentArticleIndex >= getElements('.article').length - 1) return
-  showArticle(currentArticleIndex + 1)
+  const total = getElements('.article').length
+  if (currentArticleIndex == total - 2) alert('情话道不完，余生多指教')
+  if (currentArticleIndex <= total - 1) showArticle(currentArticleIndex + 1)
 }
 
 // 检查按钮状态并更新
