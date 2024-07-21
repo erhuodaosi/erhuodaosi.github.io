@@ -15,7 +15,7 @@ const slideshowImage = document.getElementById('slideshowImage')
 let currentIndex = 0
 let currentArticleIndex = 0
 let isPlaying = true
-const audioPlayer = document.getElementById('audioPlayer')
+const musicPlayer = document.getElementById('musicPlayer')
 const musicIcon = document.querySelector('.music-icon')
 
 // 获取单个 DOM 元素的助手函数
@@ -102,10 +102,10 @@ function checkButtonStatus() {
 
 function toggleMusic() {
   if (isPlaying) {
-      audioPlayer.pause()
+      musicPlayer.pause()
       musicIcon.classList.remove('rotate') // 停止旋转
   } else {
-      audioPlayer.play()
+      musicPlayer.play()
       musicIcon.classList.add('rotate')  // 开始旋转
   }
   isPlaying = !isPlaying
