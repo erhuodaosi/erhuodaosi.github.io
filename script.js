@@ -17,6 +17,12 @@ let currentArticleIndex = 0
 let isPlaying = true
 const musicPlayer = document.getElementById('musicPlayer')
 const musicIcon = document.querySelector('.music-icon')
+const startDate = new Date('2024-02-16T20:13:00')
+
+// 获取当前时间
+function getCurrentTime() {
+  return new Date();
+}
 
 // 获取单个 DOM 元素的助手函数
 function getElement(selector) {
@@ -100,7 +106,8 @@ function checkButtonStatus() {
   nextButton.disabled = currentArticleIndex >= getElements('.article').length - 1
 }
 
-function toggleMusic() {
+function toggleMusicPlayer() {
+  console.log({ isPlaying })
   if (isPlaying) {
       musicPlayer.pause()
       musicIcon.classList.remove('rotate') // 停止旋转
@@ -111,9 +118,32 @@ function toggleMusic() {
   isPlaying = !isPlaying
 }
 
+// 计算相爱时间
+function calculateLoveTime(startDate, now) {
+  const timeDiff = now - startDate // 时间差（毫秒）
+
+  // 将时间差转换为天、小时、分钟和秒
+  const seconds = Math.floor(timeDiff / 1000)
+  const minutes = Math.floor(seconds / 60)
+  const hours = Math.floor(minutes / 60)
+  const days = Math.floor(hours / 24)
+
+  // 格式化时间
+  return `${days}天 ${hours % 24}小时 ${minutes % 60}分钟 ${seconds % 60}秒`
+}
+
+// 更新页面上的时间显示
+function updateLoveTime() {
+  const loveTimeElement = document.getElementById('loveTime')
+  const now = getCurrentTime()
+  loveTimeElement.textContent = calculateLoveTime(startDate, now)
+}
+
 // 页面加载时的默认设置
 document.addEventListener('DOMContentLoaded', () => {
   showTab('tab1')
   showArticle(0)
+  updateLoveTime()
+  setInterval(updateLoveTime, 1000)
   initSlideshow()
 })
