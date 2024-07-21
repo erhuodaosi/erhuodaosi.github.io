@@ -107,7 +107,6 @@ function checkButtonStatus() {
 }
 
 function toggleMusicPlayer() {
-  console.log({ isPlaying })
   if (isPlaying) {
       musicPlayer.pause()
       musicIcon.classList.remove('rotate') // 停止旋转
