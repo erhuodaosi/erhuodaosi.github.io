@@ -9,10 +9,21 @@ const images = [
   './images/7.png',
   './images/8.png',
   './images/9.png'
-];
+]
 
 const slideshowImage = document.getElementById('slideshowImage')
 let currentIndex = 0
+let currentArticleIndex = 0
+
+// 获取单个 DOM 元素的助手函数
+function getElement(selector) {
+  return document.querySelector(selector)
+}
+
+// 获取所有 DOM 元素的助手函数
+function getElements(selector) {
+  return document.querySelectorAll(selector)
+}
 
 // 显示图片
 function showImage(index) {
@@ -46,39 +57,43 @@ setInterval(createHeart, 500)
 
 // 显示选项卡
 function showTab(tabId) {
-  document.querySelectorAll('.tab-content').forEach(tab => {
+  getElements('.tab-content').forEach(tab => {
     tab.style.display = tab.id === tabId ? 'block' : 'none'
   })
 
-  document.querySelectorAll('.bottom-nav button').forEach(button => {
+  getElements('.bottom-nav button').forEach(button => {
     button.classList.toggle('active', button.getAttribute('onclick').includes(tabId))
-  })
+  });
 }
 
 // 显示文章
 function showArticle(index) {
-  document.querySelectorAll('.article').forEach((article, i) => {
+  getElements('.article').forEach((article, i) => {
     article.style.display = i === index ? 'block' : 'none'
   })
   currentArticleIndex = index
+  checkButtonStatus()
 }
 
 // 显示上一篇文章
 function showPreviousArticle() {
-  if (currentArticleIndex > 0) {
-    showArticle(currentArticleIndex - 1)
-  } else {
-    alert("没有上一篇了")
-  }
+  if (currentArticleIndex <= 0) return
+  showArticle(currentArticleIndex - 1)
 }
 
 // 显示下一篇文章
 function showNextArticle() {
-  if (currentArticleIndex < document.querySelectorAll('.article').length - 1) {
-    showArticle(currentArticleIndex + 1)
-  } else {
-    alert("没有下一篇了")
-  }
+  if (currentArticleIndex >= getElements('.article').length - 1) return
+  showArticle(currentArticleIndex + 1)
+}
+
+// 检查按钮状态并更新
+function checkButtonStatus() {
+  const prevButton = getElement('.prev-btn')
+  const nextButton = getElement('.next-btn')
+
+  prevButton.disabled = currentArticleIndex === 0
+  nextButton.disabled = currentArticleIndex >= getElements('.article').length - 1
 }
 
 // 页面加载时的默认设置
