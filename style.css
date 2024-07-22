@@ -152,6 +152,7 @@ h2 {
     height: calc(100vh - 400px);
     max-height: calc(100vh - 400px);
     overflow-y: auto;
+    text-align: justify;
 }
 
 .article .content::-webkit-scrollbar {
