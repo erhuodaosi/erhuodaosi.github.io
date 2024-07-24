@@ -204,21 +204,32 @@ h2 {
     cursor: not-allowed;
 }
 
+.circle-container {
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    border-radius: 50%; /* 使容器变成圆形 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.circle-container img {
+    width: 25px;
+    height: 25px;
+}
+
 .music-icon {
     position: fixed;
     top: 8px;
     right: 8px;
-    width: 40px;
-    height: 40px;
-    background: #ff69b4;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    font-size: 20px; 
-    color: white; 
+    font-size: 20px;
+    color: white;
     z-index: 1000;
     transition: transform 0.6s ease;
 }
