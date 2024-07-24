@@ -19,6 +19,14 @@ const musicPlayer = document.getElementById('musicPlayer')
 const musicIcon = document.querySelector('.music-icon')
 const startDate = new Date('2024-02-15T20:13:00')
 
+const canvas = document.getElementById('heartCanvas')
+const ctx = canvas.getContext('2d')
+const particles = []
+const heartContainer = document.querySelector('.heart-container')
+const heartText = document.querySelector('.heart-text')
+
+let heartCenterX, heartCenterY, heartSize
+
 // 获取当前时间
 function getCurrentTime() {
   return new Date();
@@ -138,6 +146,97 @@ function updateLoveTime() {
   loveTimeElement.textContent = calculateLoveTime(startDate, now)
 }
 
+function resizeCanvas() {
+  canvas.width = 300
+  canvas.height = 300
+  heartCenterX = canvas.width / 2
+  heartCenterY = canvas.height / 2
+  heartSize = canvas.width * 0.3
+  particles.length = 0
+  createHeartParticles()
+}
+
+function heartShape(t) {
+  const x = 16 * Math.pow(Math.sin(t), 3)
+  const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)
+  return { x, y }
+}
+
+function createHeartParticles() {
+  const numParticles = 100
+  for (let i = 0; i < numParticles; i++) {
+    const t = Math.random() * Math.PI * 2
+    const heart = heartShape(t)
+    const x = heartCenterX + heart.x * heartSize / 16
+    const y = heartCenterY - heart.y * heartSize / 16
+    particles.push({
+      x: x,
+      y: y,
+      initialX: x,
+      initialY: y,
+      angle: Math.random() * 2 * Math.PI,
+      speed: Math.random() * 2 + 1,
+      size: Math.random() * 4 + 2,
+      life: Math.random() * 60 + 60,
+      offsetX: (Math.random() - 0.5) * 2,
+      offsetY: (Math.random() - 0.5) * 2
+    })
+  }
+}
+
+function drawHeartParticles() {
+  for (let i = 0; i < particles.length; i++) {
+    const p = particles[i]
+    ctx.save()
+    ctx.translate(p.x + p.offsetX, p.y + p.offsetY)
+    ctx.rotate(45 * Math.PI / 180)
+    ctx.beginPath()
+    ctx.moveTo(0, 0)
+    ctx.bezierCurveTo(p.size / 2, -p.size / 2, p.size * 1.5, p.size / 3, 0, p.size)
+    ctx.bezierCurveTo(-p.size * 1.5, p.size / 3, -p.size / 2, -p.size / 2, 0, 0)
+    ctx.closePath()
+    ctx.fillStyle = 'pink'
+    ctx.shadowBlur = 10
+    ctx.shadowColor = 'pink'
+    ctx.fill()
+    ctx.restore()
+
+    const dx = p.x - heartCenterX
+    const dy = p.y - heartCenterY
+    const distance = Math.sqrt(dx * dx + dy * dy)
+    const speedX = p.speed * (dx / distance)
+    const speedY = p.speed * (dy / distance)
+    p.x += speedX
+    p.y += speedY
+    p.life--
+
+    p.offsetX += (Math.random() - 0.5) * 0.2
+    p.offsetY += (Math.random() - 0.5) * 0.2
+
+    if (p.life <= 0) {
+      particles.splice(i, 1)
+      i--
+    }
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  const time = Date.now() % 2000
+  const scale = time < 1000 ? 1 : 1.333
+  heartText.style.transform = `translate(-50%, -50%) scale(${scale})`
+  heartSize = canvas.width * (0.2 + 0.1 * scale)
+
+  drawHeartParticles()
+
+  if (particles.length < 100) {
+    createHeartParticles()
+  }
+
+  requestAnimationFrame(animate)
+}
+
 // 页面加载时的默认设置
 document.addEventListener('DOMContentLoaded', () => {
   showTab('tab1')
@@ -145,4 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateLoveTime()
   setInterval(updateLoveTime, 1000)
   initSlideshow()
+  resizeCanvas()
+  animate()
 })
