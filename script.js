@@ -175,8 +175,8 @@ function createHeartParticles() {
       initialX: x,
       initialY: y,
       angle: Math.random() * 2 * Math.PI,
-      speed: Math.random() * 2 + 1,
-      size: Math.random() * 4 + 2,
+      speed: Math.random() + 1,
+      size: Math.random() + 2,
       life: Math.random() * 60 + 60,
       offsetX: (Math.random() - 0.5) * 2,
       offsetY: (Math.random() - 0.5) * 2
