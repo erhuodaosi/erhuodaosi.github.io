@@ -163,7 +163,7 @@ function heartShape(t) {
 }
 
 function createHeartParticles() {
-  const numParticles = 100
+  const numParticles = 80
   for (let i = 0; i < numParticles; i++) {
     const t = Math.random() * Math.PI * 2
     const heart = heartShape(t)
@@ -196,8 +196,8 @@ function drawHeartParticles() {
     ctx.bezierCurveTo(-p.size * 1.5, p.size / 3, -p.size / 2, -p.size / 2, 0, 0)
     ctx.closePath()
     ctx.fillStyle = 'pink'
-    ctx.shadowBlur = 10
-    ctx.shadowColor = 'pink'
+    // ctx.shadowBlur = 10
+    // ctx.shadowColor = 'pink'
     ctx.fill()
     ctx.restore()
 
@@ -230,7 +230,7 @@ function animate() {
 
   drawHeartParticles()
 
-  if (particles.length < 100) {
+  if (particles.length < 80) {
     createHeartParticles()
   }
 
