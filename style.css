@@ -6,6 +6,7 @@ body {
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: bold;
     text-align: center;
+    user-select: none;
 }
 
 h2 {
