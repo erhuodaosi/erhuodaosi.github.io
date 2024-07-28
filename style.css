@@ -26,9 +26,15 @@ h2 {
     height: 25px;
 }
 
+.memory-wrapper {
+  background: #ffe4e1;
+}
+
 .memory-wrapper img {
     width: 80vw;
-    height: auto;
+    height: calc(100vh - 480px);
+    object-fit: contain;
+    mix-blend-mode: multiply; 
     border: 3px solid #ff69b4;
     border-radius: 15px;
     background-color: #fff;
