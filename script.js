@@ -52,7 +52,7 @@ function nextSlide() {
 // 初始化图片展示
 function initSlideshow() {
   showImage(currentIndex)
-  slideshowImage.onload = () => setTimeout(nextSlide, 2000)
+  slideshowImage.onload = () => setTimeout(nextSlide, 3000)
 }
 
 // 创建心形动画
