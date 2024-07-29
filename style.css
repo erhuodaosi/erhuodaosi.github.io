@@ -28,7 +28,7 @@ h2 {
 
 .memory-wrapper img {
     width: 80vw;
-    height: calc(100vh - 480px);
+    height: calc(100vh - 495px);
     object-fit: contain;
     border: 3px solid #ff69b4;
     border-radius: 15px;
