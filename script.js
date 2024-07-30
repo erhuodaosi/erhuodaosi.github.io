@@ -9,33 +9,75 @@ const images = [
   './images/7.jpg'
 ]
 
-const slideshowImage = document.getElementById('slideshowImage')
+const slideshowImage = getElementById('slideshowImage')
 let currentIndex = 0
 let currentArticleIndex = 0
 let isPlaying = true
-const musicPlayer = document.getElementById('musicPlayer')
-const musicIcon = document.querySelector('.music-icon')
+const musicPlayer = getElementById('musicPlayer')
+const musicIcon = getElement('.music-icon')
 const startDate = new Date('2024-02-15T20:13:00')
 
-const canvas = document.getElementById('heartCanvas')
+const canvas = getElementById('heartCanvas')
 const ctx = canvas.getContext('2d')
 const particles = []
-const heartContainer = document.querySelector('.heart-container')
-const heartText = document.querySelector('.heart-text')
+const heartContainer = getElement('.heart-container')
+const heartText = getElement('.heart-text')
+const textElement = getElement('.text')
+const text = `
+笑靥如花映月明，清风似雨拂靥凉。
+情缘不知何时起，世间美好尽予你。
+美食佳肴献佳人，此情长伴永相依。
+西湖公园初回眸，粉衣含笑花失容。
+情根初种刻心田，魂牵梦绕夜难眠。
+归校相别情难舍，风雨为伴暖餐随。
+情深似海难言表，思念如潮夜未央。
+考研报班频对比，同看电视共晾衣。
+琐碎家务勤分担，夜静无声送珍馐。
+灯下研读绘宏图，笔尖挥舞书前程。
+夜雨轻敲窗下影，晨曦细洒书上梦。
+默守深情为红颜，唯愿美梦皆成真。
+微不足道难自称，包容似海爱无垠。
+父母首饰赠佳人，暗定终身爱愈浓。
+三生有幸常相伴，同游南京笑语盈。
+牛首山巅云雾撩,石板路上岁月长。
+夫子庙前古韵浓，老门东里历史悠。
+古城小巷共徜徉，秦淮河畔诉衷肠。
+总统府内民国史，博物馆里梦回朝。
+纪念馆中忆史殇，更惜眼前心上人。
+闲来无事把车学，锻炼考公两手抓。
+佳偶天成心相印，携手共度百年情。
+曾经岁月如流水，余生情深似海长。
+一砖一瓦筑梦华，夫妻齐心添新家。
+自驾同行闯天涯，故地重游情更长。
+童声笑语暖春风，稚影渐长心常留。
+欢庆佳期喜满堂，儿孙绕膝笑声扬。
+共度天伦时光美，岁月静好常相伴。
+银丝遍缕情未减，相依相伴笑常开。
+白头偕老共此生，平凡岁月更显真。
+七夕情深意更切，温馨小窝表真心。
+加班加点未曾倦，此情此爱永相随。
+`
 
+let index = 0
+let typingInterval
 let heartCenterX, heartCenterY, heartSize
 
 // 获取当前时间
 function getCurrentTime() {
-  return new Date();
+  return new Date()
 }
 
-// 获取单个 DOM 元素的助手函数
+// 获取单个dom元素的函数
 function getElement(selector) {
   return document.querySelector(selector)
 }
 
-// 获取所有 DOM 元素的助手函数
+// 根据id获取单个dom元素的函数
+function getElementById(selector) {
+  return document.getElementById(selector)
+}
+
+// 获取所有 DOM 元素的函数
 function getElements(selector) {
   return document.querySelectorAll(selector)
 }
@@ -79,6 +121,8 @@ function showTab(tabId) {
   getElements('.bottom-nav button').forEach(button => {
     button.classList.toggle('active', button.getAttribute('onclick').includes(tabId))
   })
+
+  if (tabId == 'tab3') startTyping()
 }
 
 // 显示文章
@@ -114,11 +158,11 @@ function checkButtonStatus() {
 
 function toggleMusicPlayer() {
   if (isPlaying) {
-      musicPlayer.pause()
-      musicIcon.classList.remove('rotate') // 停止旋转
+    musicPlayer.pause()
+    musicIcon.classList.remove('rotate') // 停止旋转
   } else {
-      musicPlayer.play()
-      musicIcon.classList.add('rotate')  // 开始旋转
+    musicPlayer.play()
+    musicIcon.classList.add('rotate') // 开始旋转
   }
   isPlaying = !isPlaying
 }
@@ -157,7 +201,10 @@ function resizeCanvas() {
 function heartShape(t) {
   const x = 16 * Math.pow(Math.sin(t), 3)
   const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)
-  return { x, y }
+  return {
+    x,
+    y
+  }
 }
 
 function createHeartParticles() {
@@ -233,6 +280,25 @@ function animate() {
   }
 
   requestAnimationFrame(animate)
+}
+
+function startTyping() {
+  setTimeout(() => {
+    textElement.textContent = ''
+    index = 0
+    clearInterval(typingInterval)
+    typingInterval = setInterval(type, 100)
+  }, 1000)
+}
+
+function type() {
+  textElement.textContent = text.slice(0, index)
+  index++
+  if (index > text.length) {
+    index = 0
+    textElement.textContent = text
+    clearInterval(typingInterval)
+  }
 }
 
 // 页面加载时的默认设置
