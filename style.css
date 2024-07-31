@@ -364,8 +364,8 @@ h2 {
 
 .enter-button {
     margin-top: 15px;
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 20px;
+    font-size: 24px;
     color: white;
     background: linear-gradient(to right, #ff69b4, #ff1493);
     border: none;
