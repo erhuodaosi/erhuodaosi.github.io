@@ -279,7 +279,7 @@ h2 {
     color: white;
     text-align: center;
     z-index: 1;
-    font-size: 20px;
+    font-size: 5vw;
     line-height: 1.2;
     transition: transform 0.5s ease;
 }
@@ -316,6 +316,38 @@ h2 {
     }
 } */
 
+/* 笑脸弹出动画 */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 按钮脉动动画 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .door-container {
     position: absolute;
     top: 0;
@@ -325,9 +357,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8d6d6; /* 背景颜色 */
+    background-color: #f8d6d6;
+    /* 背景颜色 */
     z-index: 1;
-    cursor: pointer; /* 指示用户可以点击 */
+    cursor: pointer;
+    /* 指示用户可以点击 */
     overflow: hidden;
 }
 
@@ -335,7 +369,8 @@ h2 {
     position: relative;
     width: 50%;
     height: 100%;
-    background-color: #ffb3b3; /* 更柔和的门颜色 */
+    background-color: #ffb3b3;
+    /* 更柔和的门颜色 */
     transform-origin: center;
     transition: transform 1s ease;
 }
@@ -355,12 +390,14 @@ h2 {
 .smiley-face {
     font-size: 60px;
     margin-bottom: 20px;
+    animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 .welcome-text {
     font-size: 28px;
     margin: 10px 0;
-    white-space: nowrap; /* 确保标题在一行展示 */
+    white-space: nowrap;
+    /* 确保标题在一行展示 */
 }
 
 .enter-button {
@@ -373,11 +410,12 @@ h2 {
     border-radius: 20px;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
+    animation: pulse 2s infinite;
 }
 
 .enter-button:hover {
     background: linear-gradient(to right, #ff1493, #ff69b4);
-    transform: scale(1.05);
+    transform: scale(1.2);
 }
 
 .main-content {
