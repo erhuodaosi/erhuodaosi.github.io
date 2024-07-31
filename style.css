@@ -7,6 +7,10 @@ body {
     font-weight: bold;
     text-align: center;
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
 
 h2 {
@@ -167,7 +171,6 @@ h2 {
 
 .article .content {
     color: #333;
-    font-size: 16px;
     height: calc(100vh - 400px);
     max-height: calc(100vh - 400px);
     overflow-y: auto;
@@ -283,7 +286,7 @@ h2 {
 .typing {
     white-space: pre-wrap;
     animation: blink-caret .75s step-end infinite;
-    max-height: calc(100vh - 216px);
+    max-height: calc(100vh - 235px);
     overflow-y: auto;
     width: 90vw;
     border: 2px solid #ff69b4;
@@ -311,3 +314,85 @@ h2 {
         border-color: black;
     }
 } */
+
+.door-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8d6d6; /* 背景颜色 */
+    z-index: 1;
+    cursor: pointer; /* 指示用户可以点击 */
+    overflow: hidden;
+}
+
+.door {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: #ffb3b3; /* 更柔和的门颜色 */
+    transform-origin: center;
+    transition: transform 1s ease;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.smiley-face {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    font-size: 28px;
+    margin: 10px 0;
+    white-space: nowrap; /* 确保标题在一行展示 */
+}
+
+.enter-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(to right, #ff69b4, #ff1493);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.enter-button:hover {
+    background: linear-gradient(to right, #ff1493, #ff69b4);
+    transform: scale(1.05);
+}
+
+.main-content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.door-container.open .door-left {
+    transform: translateX(-100%);
+}
+
+.door-container.open .door-right {
+    transform: translateX(100%);
+}
+
+.door-container.open .overlay-content {
+    opacity: 0;
+}
