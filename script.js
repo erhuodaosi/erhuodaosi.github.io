@@ -1,3 +1,6 @@
+const doorContainer = getElementById('doorContainer')
+const mainContent = getElementById('mainContent')
+
 // 图片数组
 const images = [
   './images/1.jpg',
@@ -295,6 +298,16 @@ function type() {
     index++
     textElement.scrollTop = textElement.scrollHeight
   } else clearInterval(typingInterval)
+}
+
+function enterHandler() {
+  doorContainer.classList.add('open')
+
+  // 显示主内容
+  setTimeout(() => {
+    mainContent.style.display = 'block'
+    doorContainer.style.display = 'none'
+  }, 1000)
 }
 
 // 页面加载时的默认设置
