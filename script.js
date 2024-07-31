@@ -39,7 +39,7 @@ const text = `
 微不足道难自称，包容似海爱无垠。
 父母首饰赠佳人，暗定终身爱愈浓。
 三生有幸常相伴，同游南京笑语盈。
-牛首山巅云雾撩, 石板路上岁月长。
+牛首山巅云雾撩，石板路上岁月长。
 夫子庙前古韵浓，老门东里历史悠。
 古城小巷共徜徉，秦淮河畔诉衷肠。
 总统府内民国史，博物馆里梦回朝。
@@ -283,22 +283,18 @@ function animate() {
 }
 
 function startTyping() {
-  setTimeout(() => {
-    textElement.textContent = ''
-    index = 0
-    clearInterval(typingInterval)
-    typingInterval = setInterval(type, 100)
-  }, 1000)
+  textElement.textContent = ''
+  index = 0
+  clearInterval(typingInterval)
+  typingInterval = setInterval(type, 50)
 }
 
 function type() {
-  textElement.textContent = text.slice(0, index)
-  index++
-  if (index > text.length) {
-    index = 0
-    textElement.textContent = text
-    clearInterval(typingInterval)
-  }
+  if (index <= text.length) {
+    textElement.textContent = text.slice(0, index)
+    index++
+    textElement.scrollTop = textElement.scrollHeight
+  } else clearInterval(typingInterval)
 }
 
 // 页面加载时的默认设置
