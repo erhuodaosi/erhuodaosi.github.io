@@ -420,7 +420,6 @@ h2 {
 }
 
 .main-content {
-    display: none;
     animation: fadeIn 1s ease forwards, scaleUp 0.5s ease-out forwards;
 }
 
