@@ -304,6 +304,7 @@ h2 {
     }
 }
 
+/* 初始状态 */
 .door-container {
     position: absolute;
     top: 0;
@@ -315,20 +316,27 @@ h2 {
     align-items: center;
     z-index: 1;
     overflow: hidden;
-    background: linear-gradient(to right, #ffb3b3 49%, #ffb3b3 51%, #f8d6d6);
+    background: linear-gradient(to right, #ffb3b3 0%, #f8d6d6 50%, #ffb3b3 100%);
 }
 
+/* 门的动画样式 */
 .door {
     position: absolute;
-    width: 50%;
     height: 100%;
     background: linear-gradient(to right, #ffb3b3, #f8d6d6);
-    transition: transform 2.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 2.5s cubic-bezier(0.25, 1, 0.5, 1), width 2.5s ease;
     transform-origin: center;
     overflow: hidden;
     box-shadow: 0 0 50px rgba(255, 255, 255, 0.6);
+    width: 0%; /* 初始宽度为 0 */
 }
 
+/* 动画状态 */
+.door.fill {
+    width: 50%; /* 动画结束后宽度为 50% */
+}
+
+/* 门的左右侧样式 */
 .door-left {
     left: 0;
     transform-origin: center left;
@@ -346,16 +354,12 @@ h2 {
     bottom: 0;
     width: 4px;
     background: rgba(255, 255, 255, 0.8);
-    /* 模拟门缝的光效 */
     opacity: 0;
-    /* 初始状态完全透明 */
     transition: opacity 0.1s ease;
-    /* 添加短暂的淡入效果 */
 }
 
 .door-container.open .door::after {
     opacity: 1;
-    /* 门开始打开时显示光效 */
 }
 
 .door-left::after {
@@ -373,7 +377,7 @@ h2 {
     opacity: 1;
     transition: opacity 1s ease;
 }
-	
+
 .smiley-face {
     font-size: 60px;
     margin-bottom: 20px;
@@ -435,16 +439,6 @@ h2 {
 
     50% {
         transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes scaleUp {
-    0% {
-        transform: scale(0.8);
     }
 
     100% {
