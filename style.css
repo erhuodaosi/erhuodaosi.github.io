@@ -305,6 +305,10 @@ h2 {
     }
 }
 
+.main-content {
+    animation: fadeIn 1s ease forwards, scaleUp 0.5s ease-out forwards;
+}
+
 .door-container {
     position: absolute;
     top: 0;
