@@ -316,38 +316,6 @@ h2 {
     }
 } */
 
-/* 笑脸弹出动画 */
-@keyframes bounceIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-
-    70% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* 按钮脉动动画 */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 .door-container {
     position: absolute;
     top: 0;
@@ -357,22 +325,56 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8d6d6;
-    /* 背景颜色 */
     z-index: 1;
-    cursor: pointer;
-    /* 指示用户可以点击 */
     overflow: hidden;
+    background: linear-gradient(to right, #ffb3b3 49%, #ffb3b3 51%, #f8d6d6);
 }
 
 .door {
-    position: relative;
+    position: absolute;
     width: 50%;
     height: 100%;
-    background-color: #ffb3b3;
-    /* 更柔和的门颜色 */
+    background: linear-gradient(to right, #ffb3b3, #f8d6d6);
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
     transform-origin: center;
-    transition: transform 1s ease;
+    overflow: hidden;
+}
+
+.door-left {
+    left: 0;
+    transform-origin: center left;
+}
+
+.door-right {
+    right: 0;
+    transform-origin: center right;
+}
+
+.door::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    /* 模拟门缝的光效 */
+    opacity: 0;
+    /* 初始状态完全透明 */
+    transition: opacity 0.1s ease;
+    /* 添加短暂的淡入效果 */
+}
+
+.door-container.open .door::after {
+    opacity: 1;
+    /* 门开始打开时显示光效 */
+}
+
+.door-left::after {
+    right: 0;
+}
+
+.door-right::after {
+    left: 0;
 }
 
 .overlay-content {
@@ -390,19 +392,18 @@ h2 {
 .smiley-face {
     font-size: 60px;
     margin-bottom: 20px;
-    animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    animation: bounceIn 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 .welcome-text {
     font-size: 28px;
     margin: 10px 0;
     white-space: nowrap;
-    /* 确保标题在一行展示 */
 }
 
 .enter-button {
     margin-top: 15px;
-    padding: 20px;
+    padding: 15px;
     font-size: 24px;
     color: white;
     background: linear-gradient(to right, #ff69b4, #ff1493);
@@ -418,19 +419,64 @@ h2 {
     transform: scale(1.2);
 }
 
-.main-content {
-    display: none;
-    text-align: center;
-}
-
 .door-container.open .door-left {
-    transform: translateX(-100%);
+    transform: translateX(-100%) rotateY(-15deg);
 }
 
 .door-container.open .door-right {
-    transform: translateX(100%);
+    transform: translateX(100%) rotateY(15deg);
 }
 
 .door-container.open .overlay-content {
     opacity: 0;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
