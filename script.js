@@ -307,7 +307,7 @@ function enterHandler() {
   setTimeout(() => {
     mainContent.style.display = 'block'
     doorContainer.style.display = 'none'
-  }, 1000)
+  }, 2500)
 }
 
 // 页面加载时的默认设置
