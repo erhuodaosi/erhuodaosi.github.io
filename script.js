@@ -28,8 +28,8 @@ const heartText = getElement('.heart-text')
 const textElement = getElement('.text')
 const text = `
 笑靥如花映月明，清风似雨拂靥凉。
-情缘不知何时起，世间美好尽予你。
-美食佳肴献佳人，此情长伴永相依。
+情缘不知何时起，世间美好只予你。
+佳肴美馔尽相献，此情长伴永相依。
 西湖公园初回眸，粉衣含笑花失容。
 情根初种刻心田，魂牵梦绕夜难眠。
 归校相别情难舍，风雨为伴暖餐随。
