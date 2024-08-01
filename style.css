@@ -305,10 +305,6 @@ h2 {
     }
 }
 
-.main-content {
-    animation: fadeIn 1s ease forwards, scaleUp 0.5s ease-out forwards;
-}
-
 .door-container {
     position: absolute;
     top: 0;
@@ -446,16 +442,6 @@ h2 {
 
     100% {
         transform: scale(1);
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
     }
 }
 
