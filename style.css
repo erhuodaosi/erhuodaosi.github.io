@@ -326,6 +326,7 @@ h2 {
     transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
     transform-origin: center;
     overflow: hidden;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.6);
 }
 
 .door-left {
@@ -380,9 +381,10 @@ h2 {
 }
 
 .welcome-text {
-    font-size: 28px;
+    font-size: 36px;
     margin: 10px 0;
     white-space: nowrap;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
 }
 
 .enter-button {
