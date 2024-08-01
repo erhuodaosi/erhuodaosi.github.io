@@ -1,5 +1,7 @@
 const doorContainer = getElementById('doorContainer')
 const mainContent = getElementById('mainContent')
+const doorLeft = document.querySelector('.door-left')
+const doorRight = document.querySelector('.door-right')
 
 // 图片数组
 const images = [
@@ -312,6 +314,8 @@ function enterHandler() {
 
 // 页面加载时的默认设置
 document.addEventListener('DOMContentLoaded', () => {
+  doorLeft.classList.add('fill')
+  doorRight.classList.add('fill')
   showTab('tab1')
   showArticle(0)
   updateLoveTime()
