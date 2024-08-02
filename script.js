@@ -311,7 +311,7 @@ function enterHandler() {
     countdown.style.display = 'block'
 
     // 开始倒计时
-    let timeLeft = 5
+    let timeLeft = 3
     countdown.innerText = timeLeft
 
     const countdownInterval = setInterval(() => {
