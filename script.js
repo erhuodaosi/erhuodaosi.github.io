@@ -3,6 +3,7 @@ const mainContent = getElementById('mainContent')
 const doorLeft = document.querySelector('.door-left')
 const doorRight = document.querySelector('.door-right')
 const countdown = getElementById('countdown')
+const count = getElementById('count')
 
 // 图片数组
 const images = [
@@ -305,26 +306,29 @@ function type() {
 }
 
 function enterHandler() {
-    doorContainer.classList.add('open')
+  doorContainer.classList.add('open')
 
-    // 显示倒计时
-    countdown.style.display = 'block'
+  // 显示倒计时
+  countdown.style.display = 'block'
 
-    // 开始倒计时
-    let timeLeft = 3
-    countdown.innerText = timeLeft
+  // 开始倒计时
+  let timeLeft = 5
+  count.innerText = timeLeft
 
-    const countdownInterval = setInterval(() => {
-        timeLeft--
-        countdown.innerText = timeLeft
+  const countdownInterval = setInterval(() => {
+    videoPlayer.autoplay = true
+    videoPlayer.loop = true
+    videoPlayer.play()
+    timeLeft--
+    count.innerText = timeLeft
 
-        if (timeLeft <= 0) {
-            clearInterval(countdownInterval)
-            // 显示主内容并隐藏门
-            mainContent.style.display = 'block'
-            doorContainer.style.display = 'none'
-        }
-    }, 1000)
+    if (timeLeft <= 0) {
+      clearInterval(countdownInterval)
+      // 显示主内容并隐藏门
+      mainContent.style.display = 'block'
+      doorContainer.style.display = 'none'
+    }
+  }, 1000)
 }
 
 // 页面加载时的默认设置
