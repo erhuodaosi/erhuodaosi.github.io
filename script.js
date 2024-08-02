@@ -331,9 +331,9 @@ function enterHandler() {
 document.addEventListener('DOMContentLoaded', () => {
   doorLeft.classList.add('fill')
   doorRight.classList.add('fill')
-  video.autoplay = true
-  video.loop = true
-  video.play()
+  musicPlayer.autoplay = true
+  musicPlayer.loop = true
+  musicPlayer.play()
   showTab('tab1')
   showArticle(0)
   updateLoveTime()
