@@ -14,6 +14,10 @@ body {
     height: 100%;
 }
 
+html {
+    height: 100%;
+}
+
 h2 {
     color: #ff1493;
 }
