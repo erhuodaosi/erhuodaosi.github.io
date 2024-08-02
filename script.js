@@ -326,11 +326,10 @@ function enterHandler() {
     }, 1000)
 }
 
-doorLeft.classList.add('fill')
-doorRight.classList.add('fill')
-
 // 页面加载时的默认设置
 document.addEventListener('DOMContentLoaded', () => {
+  doorLeft.classList.add('fill')
+  doorRight.classList.add('fill')
   showTab('tab1')
   showArticle(0)
   updateLoveTime()
