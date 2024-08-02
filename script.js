@@ -2,6 +2,7 @@ const doorContainer = getElementById('doorContainer')
 const mainContent = getElementById('mainContent')
 const doorLeft = document.querySelector('.door-left')
 const doorRight = document.querySelector('.door-right')
+const countdown = getElementById('countdown')
 
 // 图片数组
 const images = [
@@ -303,13 +304,26 @@ function type() {
 }
 
 function enterHandler() {
-  doorContainer.classList.add('open')
+    doorContainer.classList.add('open')
 
-  // 显示主内容
-  setTimeout(() => {
-    mainContent.style.display = 'block'
-    doorContainer.style.display = 'none'
-  }, 2500)
+    // 显示倒计时
+    countdown.style.display = 'block'
+
+    // 开始倒计时
+    let timeLeft = 5
+    countdown.innerText = timeLeft
+
+    const countdownInterval = setInterval(() => {
+        timeLeft--
+        countdown.innerText = timeLeft
+
+        if (timeLeft <= 0) {
+            clearInterval(countdownInterval)
+            // 显示主内容并隐藏门
+            mainContent.style.display = 'block'
+            doorContainer.style.display = 'none'
+        }
+    }, 1000)
 }
 
 doorLeft.classList.add('fill')
