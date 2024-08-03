@@ -307,12 +307,12 @@ function type() {
 
 function enterHandler() {
   doorContainer.classList.add('open')
-
+  
   // 显示倒计时
   countdown.style.display = 'block'
 
   // 开始倒计时
-  let timeLeft = 5
+  let timeLeft = 6
   count.innerText = timeLeft
 
   const countdownInterval = setInterval(() => {
