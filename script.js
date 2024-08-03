@@ -307,28 +307,30 @@ function type() {
 
 function enterHandler() {
   doorContainer.classList.add('open')
+
+  setTimeout(() => {
+    // 显示倒计时
+    countdown.style.display = 'block'
   
-  // 显示倒计时
-  countdown.style.display = 'block'
-
-  // 开始倒计时
-  let timeLeft = 6
-  count.innerText = timeLeft
-
-  const countdownInterval = setInterval(() => {
-    videoPlayer.autoplay = true
-    videoPlayer.loop = true
-    videoPlayer.play()
-    timeLeft--
+    // 开始倒计时
+    let timeLeft = 6
     count.innerText = timeLeft
-
-    if (timeLeft <= 0) {
-      clearInterval(countdownInterval)
-      // 显示主内容并隐藏门
-      mainContent.style.display = 'block'
-      doorContainer.style.display = 'none'
-    }
-  }, 1000)
+  
+    const countdownInterval = setInterval(() => {
+      videoPlayer.autoplay = true
+      videoPlayer.loop = true
+      videoPlayer.play()
+      timeLeft--
+      count.innerText = timeLeft
+  
+      if (timeLeft <= 0) {
+        clearInterval(countdownInterval)
+        // 显示主内容并隐藏门
+        mainContent.style.display = 'block'
+        doorContainer.style.display = 'none'
+      }
+    }, 1000)
+  }, 2500)
 }
 
 // 页面加载时的默认设置
