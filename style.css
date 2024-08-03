@@ -209,21 +209,15 @@ h2 {
 }
 
 .circle-container {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: pink;
     border-radius: 50%;
-    /* 使容器变成圆形 */
-    display: flex;
-    justify-content: center;
-    /* 水平居中 */
-    align-items: center;
-    /* 垂直居中 */
 }
 
 .circle-container img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 
 .music-icon {
