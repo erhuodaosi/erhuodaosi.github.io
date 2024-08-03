@@ -335,7 +335,7 @@ function enterHandler() {
         doorContainer.style.display = 'none'
       }
     }, 1000)
-  }, 2500)
+  }, 1500)
 }
 
 // 页面加载时的默认设置
