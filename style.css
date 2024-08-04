@@ -48,13 +48,13 @@ h2 {
 }
 
 .icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 
 .memory-wrapper img {
     width: 80vw;
-    height: calc(var(--app-height) - 495px);
+    height: calc(var(--app-height) - 470px);
     object-fit: contain;
     border: 3px solid #ff69b4;
     border-radius: 15px;
@@ -112,30 +112,29 @@ h2 {
 
 .tab-content {
     padding: 0 20px 20px;
+    height: calc(var(--app-height) - 80px); 
 }
 
 .bottom-nav {
     display: flex;
     justify-content: space-around;
     background: linear-gradient(to right, #ff69b4, #ff1493);
-    padding: 10px 0;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    box-shadow: 0 -2px 5px rgb(0 0 0 / 20%);
+    padding: 5px;
 }
 
 .bottom-nav button {
     background: none;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: 10px;
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
@@ -148,7 +147,7 @@ h2 {
 }
 
 .article-wrapper {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,14 +172,13 @@ h2 {
 
 .article .content {
     color: #333;
-    height: calc(var(--app-height) - 400px);
-    max-height: calc(var(--app-height) - 400px);
+    height: calc(var(--app-height) - 365px);
+    max-height: calc(var(--app-height) - 365px);
     overflow-y: auto;
     text-align: justify;
 }
 
 .article-nav {
-    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -281,7 +279,7 @@ h2 {
 .typing {
     white-space: pre-wrap;
     animation: blink-caret .75s step-end infinite;
-    max-height: calc(var(--app-height) - 235px);
+    max-height: calc(var(--app-height) - 195px);
     overflow-y: auto;
     width: 90vw;
     border: 2px solid #ff69b4;
