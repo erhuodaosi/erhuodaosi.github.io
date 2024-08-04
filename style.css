@@ -54,7 +54,7 @@ h2 {
 
 .memory-wrapper img {
     width: 80vw;
-    height: calc(var(--app-height) - 470px);
+    height: calc(var(--app-height) - 485px);
     object-fit: contain;
     border: 3px solid #ff69b4;
     border-radius: 15px;
@@ -112,7 +112,7 @@ h2 {
 
 .tab-content {
     padding: 0 20px 20px;
-    height: calc(var(--app-height) - 80px); 
+    height: calc(var(--app-height) - 95px); 
 }
 
 .bottom-nav {
@@ -124,14 +124,14 @@ h2 {
     left: 0;
     width: 100%;
     box-shadow: 0 -2px 5px rgb(0 0 0 / 20%);
-    padding: 5px;
+    padding: 10px;
 }
 
 .bottom-nav button {
     background: none;
     border: none;
     color: white;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     padding: 5px 15px;
@@ -172,8 +172,8 @@ h2 {
 
 .article .content {
     color: #333;
-    height: calc(var(--app-height) - 365px);
-    max-height: calc(var(--app-height) - 365px);
+    height: calc(var(--app-height) - 380px);
+    max-height: calc(var(--app-height) - 380px);
     overflow-y: auto;
     text-align: justify;
 }
@@ -279,7 +279,7 @@ h2 {
 .typing {
     white-space: pre-wrap;
     animation: blink-caret .75s step-end infinite;
-    max-height: calc(var(--app-height) - 195px);
+    max-height: calc(var(--app-height) - 210px);
     overflow-y: auto;
     width: 90vw;
     border: 2px solid #ff69b4;
