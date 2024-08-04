@@ -310,24 +310,28 @@ function type() {
   } else clearInterval(typingInterval)
 }
 
+function appHeight() {
+  document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+}
+
 function enterHandler() {
   doorContainer.classList.add('open')
 
   setTimeout(() => {
     // 显示倒计时
     countdown.style.display = 'block'
-  
+
     // 开始倒计时
     let timeLeft = 5
     count.innerText = timeLeft
-  
+
     const countdownInterval = setInterval(() => {
       videoPlayer.autoplay = true
       videoPlayer.loop = true
       videoPlayer.play()
       timeLeft--
       count.innerText = timeLeft
-  
+
       if (timeLeft <= 0) {
         clearInterval(countdownInterval)
         // 显示主内容并隐藏门
@@ -340,6 +344,7 @@ function enterHandler() {
 
 // 页面加载时的默认设置
 document.addEventListener('DOMContentLoaded', () => {
+  appHeight()
   doorLeft.classList.add('fill')
   doorRight.classList.add('fill')
   musicPlayer.autoplay = true
