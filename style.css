@@ -1,3 +1,7 @@
+:root {
+    --app-height: 100%;
+}
+
 body {
     background-color: #ffe4e1;
     margin: 0;
@@ -50,7 +54,7 @@ h2 {
 
 .memory-wrapper img {
     width: 80vw;
-    height: calc(100vh - 495px);
+    height: calc(var(--app-height) - 495px);
     object-fit: contain;
     border: 3px solid #ff69b4;
     border-radius: 15px;
@@ -171,8 +175,8 @@ h2 {
 
 .article .content {
     color: #333;
-    height: calc(100vh - 400px);
-    max-height: calc(100vh - 400px);
+    height: calc(var(--app-height) - 400px);
+    max-height: calc(var(--app-height) - 400px);
     overflow-y: auto;
     text-align: justify;
 }
@@ -279,7 +283,7 @@ h2 {
 .typing {
     white-space: pre-wrap;
     animation: blink-caret .75s step-end infinite;
-    max-height: calc(100vh - 235px);
+    max-height: calc(var(--app-height) - 235px);
     overflow-y: auto;
     width: 90vw;
     border: 2px solid #ff69b4;
