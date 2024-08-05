@@ -232,7 +232,6 @@ h2 {
     cursor: pointer;
     font-size: 20px;
     color: white;
-    z-index: 10;
     transition: transform 0.6s ease;
 }
 
