@@ -4,6 +4,7 @@ const doorLeft = document.querySelector('.door-left')
 const doorRight = document.querySelector('.door-right')
 const countdown = getElementById('countdown')
 const count = getElementById('count')
+let typeAgain = true
 
 // 图片数组
 const images = [
@@ -135,7 +136,10 @@ function showTab(tabId) {
     button.classList.toggle('active', button.getAttribute('onclick').includes(tabId))
   })
 
-  if (tabId == 'tab3') startTyping()
+  if (tabId == 'tab3' && typeAgain) {
+    startTyping()
+    typeAgain = false
+  }
 }
 
 // 显示文章
