@@ -121,7 +121,7 @@ h2 {
     justify-content: space-around;
     background: linear-gradient(to right, #ff69b4, #ff1493);
     position: fixed;
-    z-index: 10；
+    z-index: 10;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -431,17 +431,17 @@ video {
 }
 
 .shark-txt, .shark-pink-txt {
-  -webkit-text-fill-color: transparent !important;
+  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text !important;
   animation: shark-txt 2s infinite;
 }
 
-.shark-text {
+.shark-txt {
   background: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 60%) -100% / 50% no-repeat currentColor;
 }
 
 .shark-pink-txt {
-  background: linear-gradient(45deg, rgba(255, 20, 147, 0) 40%, rgba(255, 20, 147, 0.7), rgba(255, 20, 147, 0) 60%) -100% / 50% no-repeat currentColor;
+  background: linear-gradient(45deg, rgba(255, 20, 147, 0) 40%, rgba(255, 20, 147, 0.3), rgba(255, 20, 147, 0) 60%) -100% / 50% no-repeat currentColor;
 }
 
 @keyframes shark-txt {
