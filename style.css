@@ -433,6 +433,8 @@ video {
 .shark-txt, .shark-pink-txt {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  text-fill-color: transparent;
+  background-clip: text;
   animation: shark-txt 2s infinite;
 }
 
