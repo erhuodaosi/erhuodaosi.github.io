@@ -280,21 +280,6 @@ h2 {
     border: 2px solid #ff69b4;
     border-radius: 15px;
     padding-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.typing::before {
-    content: '';
-    position: absolute;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    border-radius: 15px;
-    background-image: conic-gradient(transparent, #ff1493);
-    z-index: -2;
-    animation: rotation 4s linear infinite;
 }
 
 /* 初始状态 */
