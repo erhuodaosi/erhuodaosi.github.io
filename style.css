@@ -64,6 +64,20 @@ h2 {
     transition: opacity 1s ease-in-out;
 }
 
+.memory-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.memory-wrapper::after{
+    content: '';
+    position: absolute;
+    inset: -20%;
+    background: linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255, 255, 255, 0.7), rgba(255,255,255,0) 60%);
+    animation: shark-wrap 3s infinite;
+    transform: translateX(-100%);
+}
+
 .heart {
     position: absolute;
     width: 30px;
@@ -92,23 +106,6 @@ h2 {
 .heart:after {
     top: 0;
     left: 15px;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(1) rotate(-45deg);
-        opacity: 1;
-    }
-
-    50% {
-        transform: translateY(-50vh) scale(1.2) rotate(-45deg);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: translateY(-100vh) scale(1.5) rotate(-45deg);
-        opacity: 0;
-    }
 }
 
 .tab-content {
@@ -239,16 +236,6 @@ h2 {
     animation: rotate 0.5s linear infinite;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .music-player-wrapper {
     position: absolute;
     left: -9999px;
@@ -286,16 +273,6 @@ h2 {
     border: 2px solid #ff69b4;
     border-radius: 15px;
     padding-bottom: 20px;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
 }
 
 /* 初始状态 */
@@ -481,5 +458,48 @@ video {
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes shark-wrap {
+    to {
+      transform: translateX(100%);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) scale(1.2) rotate(-45deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1.5) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
     }
 }
