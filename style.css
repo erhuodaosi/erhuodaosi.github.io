@@ -62,11 +62,9 @@ h2 {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: opacity 1s ease-in-out;
-    position: relative;
-    overflow: hidden;
 }
 
-.memory-wrapper img::before {
+.memory-wrapper::before {
     content: '';
     position: absolute;
     left: -50%;
@@ -82,6 +80,7 @@ h2 {
 .memory-wrapper {
     overflow: hidden;
     position: relative;
+    border-radius: 15px;
 }
 
 .memory-wrapper::after{
