@@ -263,14 +263,14 @@ h2 {
 }
 
 .typing {
-    animation: typing 100s infinite linear;
+/*     animation: typing 100s infinite linear;
     -webkit-animation: typing 100s infinite linear;
     color: transparent;
     background: -webkit-linear-gradient(30deg, #32c5ff 25%, #b620e0 50%, #f7b500 75%, #20e050 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: auto;
+    background-size: auto; */
     white-space: pre-wrap;
     max-height: calc(var(--app-height) - 210px);
     overflow-y: auto;
