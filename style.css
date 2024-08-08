@@ -430,6 +430,30 @@ video {
     margin-bottom: 10px;
 }
 
+.shark-txt, .shark-pink-txt {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: shark-txt 2s infinite;
+}
+
+.shark-text {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 60%) -100% / 50% no-repeat currentColor;
+}
+
+.shark-pink-txt {
+  background: linear-gradient(45deg, rgba(255, 105, 180, 0) 40%, rgba(255, 105, 180, 0.7), rgba(255, 105, 180, 0) 60%) -100% / 50% no-repeat currentColor;
+}
+
+@keyframes shark-txt {
+  from {
+    background-position: -100%;
+  }
+
+  to {
+    background-position: 200%;
+  }
+}
+
 @keyframes bounceIn {
     0% {
         opacity: 0;
