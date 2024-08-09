@@ -143,7 +143,7 @@ h2 {
 }
 
 .article-wrapper {
-    margin-top: 25px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,7 +161,7 @@ h2 {
     text-align: left;
 }
 
-.article h3 {
+.title {
     color: #ff69b4;
     font-size: 24px;
     margin-bottom: 10px;
@@ -169,8 +169,8 @@ h2 {
 
 .article .content {
     color: #333;
-    height: calc(var(--app-height) - 380px);
-    max-height: calc(var(--app-height) - 380px);
+    height: calc(var(--app-height) - 355px);
+    max-height: calc(var(--app-height) - 355px);
     overflow-y: auto;
     text-align: justify;
 }
