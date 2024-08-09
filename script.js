@@ -31,7 +31,7 @@ const particles = []
 const heartContainer = getElement('.heart-container')
 const heartText = getElement('.heart-text')
 const textElement = getElement('.text')
-const typingElement = getElement('.typing')
+// const typingElement = getElement('.typing')
 const text = `
 含苞待放
 笑靥如花映月明，清风似雨拂靥凉。
@@ -311,7 +311,8 @@ function type() {
   if (index <= text.length) {
     textElement.textContent = text.slice(0, index)
     index++
-    typingElement.scrollTop = textElement.scrollHeight
+    // typingElement.scrollTop = textElement.scrollHeight
+    textElement.scrollTop = textElement.scrollHeight
   } else clearInterval(typingInterval)
 }
 
