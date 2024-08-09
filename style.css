@@ -278,6 +278,7 @@ h2 {
     animation: rainbowGradient 300s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: -30px;
 }
 
 /* 初始状态 */
