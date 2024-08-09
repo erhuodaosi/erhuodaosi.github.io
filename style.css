@@ -358,7 +358,7 @@ h2 {
 .smiley-face {
     font-size: 60px;
     margin-bottom: 20px;
-    animation: bounceIn 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    animation: bounceIn 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards infinite;
 }
 
 .welcome-text {
