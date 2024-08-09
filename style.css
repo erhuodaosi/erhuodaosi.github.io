@@ -273,13 +273,13 @@ h2 {
 }
 
 .text {
-    background: -webkit-linear-gradient(30deg, #32c5ff 25%, #b620e0 50%, #f7b500 75%, #20e050 100%);
+/*     background: -webkit-linear-gradient(30deg, #32c5ff 25%, #b620e0 50%, #f7b500 75%, #20e050 100%);
     background-size: 200% 200%;
     animation: rainbowGradient 300s ease infinite;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    text-fill-color: transparent; */
     margin-top: -30px;
 }
 
@@ -514,7 +514,7 @@ video {
     }
 }
 
-@keyframes rainbowGradient {
+/* @keyframes rainbowGradient {
     0% {
         background-position: 0;
     }
@@ -522,4 +522,4 @@ video {
     100% {
         background-position: 28000px;
     }
-}
+} */
