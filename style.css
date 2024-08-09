@@ -527,3 +527,13 @@ video {
         background-position: 28000px;
     }
 }
+
+@keyframes shining {
+    from {
+        background-position: -500%;
+    }
+    
+    to {
+        background-position: 500%;
+    }
+}
