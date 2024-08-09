@@ -169,8 +169,8 @@ h2 {
 
 .article .content {
     color: #333;
-    height: calc(var(--app-height) - 370px);
-    max-height: calc(var(--app-height) - 370px);
+    height: calc(var(--app-height) - 365px);
+    max-height: calc(var(--app-height) - 365px);
     overflow-y: auto;
     text-align: justify;
 }
