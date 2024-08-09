@@ -263,14 +263,6 @@ h2 {
 }
 
 .typing {
-/*     animation: typing 100s infinite linear;
-    -webkit-animation: typing 100s infinite linear;
-    color: transparent;
-    background: -webkit-linear-gradient(30deg, #32c5ff 25%, #b620e0 50%, #f7b500 75%, #20e050 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: auto; */
     white-space: pre-wrap;
     max-height: calc(var(--app-height) - 210px);
     overflow-y: auto;
@@ -279,6 +271,14 @@ h2 {
     border: 2px solid #ff69b4;
     border-radius: 15px;
     padding-bottom: 20px;
+}
+
+.text {
+    background: -webkit-linear-gradient(30deg, #32c5ff 25%, #b620e0 50%, #f7b500 75%, #20e050 100%);
+    background-size: 200% 200%;
+    animation: rainbowGradient 300s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* 初始状态 */
@@ -505,6 +505,16 @@ video {
         background-position: 0;
     }
     
+    100% {
+        background-position: 28000px;
+    }
+}
+
+@keyframes rainbowGradient {
+    0% {
+        background-position: 0;
+    }
+
     100% {
         background-position: 28000px;
     }
