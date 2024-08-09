@@ -277,7 +277,9 @@ h2 {
     background-size: 200% 200%;
     animation: rainbowGradient 300s ease infinite;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
     margin-top: -30px;
 }
 
@@ -413,19 +415,25 @@ video {
     margin-bottom: 10px;
 }
 
-.shark-txt, .shark-pink-txt {
+.shark-pink-txt {
   -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   animation: shark-txt 2s infinite;
+  background: linear-gradient(90deg, rgba(255, 20, 147, 0) 40%, rgba(255, 20, 147, 0.7), rgba(255, 20, 147, 0) 60%) -100% / 50% no-repeat currentColor;
 }
 
 .shark-txt {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 60%) -100% / 50% no-repeat currentColor;
+  background: linear-gradient(90deg, #ff1493 0%, #FFF 30%, #ff1493 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  animation: shining 3s linear infinite;
 }
 
-.shark-pink-txt {
-  background: linear-gradient(90deg, rgba(255, 20, 147, 0) 40%, rgba(255, 20, 147, 0.7), rgba(255, 20, 147, 0) 60%) -100% / 50% no-repeat currentColor;
-}
 
 @keyframes shark-txt {
   from {
